@@ -317,13 +317,14 @@ footer .h{color:var(--sun)}
   .hero p.intro{margin-left:auto;margin-right:auto}
   .hero-cta{justify-content:center}
   .scrollhint{display:none}
-  .versions{grid-template-columns:1fr;gap:20px}
-  .ver{display:grid;grid-template-columns:104px 1fr;align-items:center;transform:none!important}
-  .ver .frame{aspect-ratio:1;height:100%;border-bottom:0;border-right:1px solid var(--line)}
+  .versions{grid-template-columns:1fr;gap:18px}
+  .ver{display:grid;grid-template-columns:118px 1fr;align-items:stretch;transform:none!important;min-height:154px;overflow:hidden}
+  .ver .frame{aspect-ratio:auto;height:100%;border-bottom:0;border-right:1px solid var(--line)}
   .ver .tape{display:none}
-  .ver .k{margin:14px 18px 0}
-  .ver h3{margin:2px 18px 4px}
-  .ver p{margin:0 18px 14px}
+  .ver .vtext{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:14px 0}
+  .ver .k{margin:0 18px;font-size:16px}
+  .ver h3{margin:3px 18px 4px;font-size:16px;line-height:1.14}
+  .ver p{margin:0 18px;font-size:13px}
   .grid{grid-template-columns:1fr}
   .ridge{min-height:0}
   .ridge .sun,.ridge .crane{display:none}
@@ -401,23 +402,29 @@ footer .h{color:var(--sun)}
       <div class="ver reveal">
         <span class="tape"></span>
         <div class="frame"><img src="assets/card-consultant.png" alt="Saloni, consultant"/></div>
-        <div class="k">At work</div>
-        <h3>Tech risk &amp; audit</h3>
-        <p>I read how systems are built, and find where they break.</p>
+        <div class="vtext">
+          <div class="k">At work</div>
+          <h3>Tech risk &amp; audit</h3>
+          <p>I read how systems are built, and find where they break.</p>
+        </div>
       </div>
       <div class="ver reveal">
         <span class="tape"></span>
         <div class="frame"><img src="assets/card-builder.png" alt="Saloni, builder"/></div>
-        <div class="k">Can't sit still</div>
-        <h3>Design &amp; product</h3>
-        <p>Half my notebooks are wireframes for apps that don't exist yet.</p>
+        <div class="vtext">
+          <div class="k">Can't sit still</div>
+          <h3>Design &amp; product</h3>
+          <p>Half my notebooks are wireframes for apps that don't exist yet.</p>
+        </div>
       </div>
       <div class="ver reveal">
         <span class="tape"></span>
         <div class="frame"><img src="assets/card-traveller.png" alt="Saloni, traveller"/></div>
-        <div class="k">Rather be outside</div>
-        <h3>Mountains &amp; travel</h3>
-        <p>A free weekend, and I'm on a trail in the Himalayas.</p>
+        <div class="vtext">
+          <div class="k">Rather be outside</div>
+          <h3>Mountains &amp; travel</h3>
+          <p>A free weekend, and I'm on a trail in the Himalayas.</p>
+        </div>
       </div>
     </div>
     <p class="versions-note reveal">Where the three overlap is where I do my best work.</p>
