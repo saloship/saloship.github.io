@@ -283,6 +283,11 @@ nav.links a:hover{color:var(--ink)}nav.links a:hover::after{width:100%}
 
 /* TRIPS — taped polaroids */
 .trips .h-sec .i{color:var(--sun-ink)}
+.trips-in{margin-top:clamp(42px,6vw,74px)}
+.trips-h{font-size:clamp(22px,3.2vw,32px);margin-bottom:4px}
+.trips-h .i{color:var(--sun-ink)}
+.cvline{margin-top:18px;color:#cfcabc;font-size:14.5px}
+.cvline a{color:var(--sun);font-weight:600;border-bottom:1px solid var(--sun)}
 .tgrid{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .tcard{position:relative;background:var(--card);padding:11px 11px 0;border-radius:3px;border:1px solid var(--line);
   box-shadow:0 1px 0 var(--line),12px 16px 30px -22px rgba(21,20,15,.6);transition:.3s}
@@ -406,6 +411,7 @@ footer .h{color:var(--sun)}
         <div class="hero-cta reveal">
           <a href="#method" class="btn btn-solid">See how I work →</a>
           <a href="#connect" class="btn btn-ghost">Say hello</a>
+          <a href="assets/Saloni-Kansal-CV.pdf" class="btn btn-ghost" download>Download CV</a>
         </div>
       </div>
       <div class="hero-art reveal">
@@ -543,7 +549,17 @@ footer .h{color:var(--sun)}
     <div class="lead-in reveal">
       <div class="kicker"><span class="eyebrow">The person behind the work</span></div>
       <h2>Beyond the <span class="i">frameworks</span></h2>
-      <p>Between meetings and assessments, I disappear into the mountains. Trekking taught me things no management book did.</p>
+      <p>Between meetings and assessments, I disappear into the mountains. Trekking taught me things no management book did — and it's where I think best.</p>
+    </div>
+    <div id="trips" class="trips-in">
+      <h3 class="trips-h reveal">From the trail, <span class="i">collecting stories</span></h3>
+      <div class="tgrid">
+        <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c5781125613cf3ee54_IMG_20240330_142245.jpg" alt="Triund trek, Macleodganj"></div><div class="cap"><div class="m">Jul 2024 · 2850m</div><div class="p">Macleodganj — Triund</div></div></div>
+        <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6316a5fd112eba743_IMG_20240330_110535.jpg" alt="Chopta and Tungnath"></div><div class="cap"><div class="m">May 2024 · 3680m</div><div class="p">Chopta &amp; Tungnath</div></div></div>
+        <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c7bd9e8bfee8d1afa7_IMG_20240331_142457.jpg" alt="Jibhi"></div><div class="cap"><div class="m">Mar 2024</div><div class="p">Jibhi</div></div></div>
+        <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c75cce69f321cc6f4e_IMG_20240331_145125.jpg" alt="Kheerganga trek, Kasol"></div><div class="cap"><div class="m">Kheerganga trek</div><div class="p">Kasol</div></div></div>
+      </div>
+      <p class="tnote reveal">Also on the map: Jaipur's palaces, Kerala's tea country in Munnar, and every emerald lake I could hike to. <a href="https://salonis-beautiful-site-e7ceeb.webflow.io/" target="_blank" rel="noopener">Read the full diaries →</a></p>
     </div>
   </div>
   <div class="ridge">
@@ -593,23 +609,6 @@ footer .h{color:var(--sun)}
   </div>
 </section>
 
-<!-- TRIPS -->
-<section class="block trips" id="trips">
-  <div class="wrap">
-    <div class="kicker reveal"><span class="eyebrow">Saloship · travel diaries</span>
-      <h2 class="h-sec">Wandering the <span class="i">mountains</span>,<br>collecting stories.</h2>
-      <p class="lead">Where I think best — and a big part of why travel is the world I want to build in.</p>
-    </div>
-    <div class="tgrid">
-      <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c5781125613cf3ee54_IMG_20240330_142245.jpg" alt="Macleodganj"></div><div class="cap"><div class="m">Jul 2024 · 2850m</div><div class="p">Macleodganj — Triund</div></div></div>
-      <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6316a5fd112eba743_IMG_20240330_110535.jpg" alt="Chopta"></div><div class="cap"><div class="m">May 2024 · 3680m</div><div class="p">Chopta &amp; Tungnath</div></div></div>
-      <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c7bd9e8bfee8d1afa7_IMG_20240331_142457.jpg" alt="Jibhi"></div><div class="cap"><div class="m">Mar 2024</div><div class="p">Jibhi</div></div></div>
-      <div class="tcard reveal"><span class="tape"></span><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c75cce69f321cc6f4e_IMG_20240331_145125.jpg" alt="Kasol"></div><div class="cap"><div class="m">Kheerganga trek</div><div class="p">Kasol</div></div></div>
-    </div>
-    <p class="tnote reveal">Also on the map: Jaipur's palaces, Kerala's tea country in Munnar, and every emerald lake I could hike to. <a href="https://salonis-beautiful-site-e7ceeb.webflow.io/" target="_blank" rel="noopener">Read the full diaries →</a></p>
-  </div>
-</section>
-
 <!-- CONNECT -->
 <section class="block connect" id="connect">
   <div class="wrap">
@@ -628,6 +627,7 @@ footer .h{color:var(--sun)}
       <a class="soc" href="https://www.instagram.com/saloni_falls/" target="_blank" rel="noopener">Instagram ↗</a>
     </div>
     <a class="mail reveal" href="mailto:salonikansal.in@gmail.com?subject=Hi%20Saloni">✉ salonikansal.in@gmail.com</a>
+    <div class="cvline reveal">Prefer the short version? <a href="assets/Saloni-Kansal-CV.pdf" download>Download my CV (PDF) ↓</a></div>
   </div>
 </section>
 
