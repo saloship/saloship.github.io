@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Travel Diaries — Saloni Kansal</title>
+<meta name="description" content="Travel diaries by Saloni Kansal — trekking and wandering across the Himalayas and beyond. Macleodganj, Kasol, Jibhi, Chopta, Jaipur, and Kerala."/>
+<link rel="canonical" href="https://saloship.github.io/diaries.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211d16;--ink-2:#4a4436;--ink-3:#6a6353;
+  --paper:#f7f4ec;--card:#fffdf7;--line:#e7dfcc;
+  --sun:#f5c518;--sun-2:#e5ac04;--sun-ink:#8a5500;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink);background:#e9e2d2;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.04;letter-spacing:-.015em}
+.script{font-family:'Caveat',cursive}
+
+/* fixed top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;background:linear-gradient(rgba(233,226,210,.9),rgba(233,226,210,0));backdrop-filter:blur(4px)}
+.bar .logo{font-family:'Fraunces';font-weight:600;font-size:18px;display:flex;align-items:center;gap:9px}
+.bar .logo .d{width:13px;height:13px;transform:rotate(45deg);border-radius:2px;background:conic-gradient(var(--sun) 0 90deg,var(--sun-2) 0 180deg,var(--sun) 0 270deg,var(--sun-2) 0 360deg)}
+.bar .back{border:1.5px solid var(--ink);border-radius:100px;padding:8px 16px;font-size:13px;font-weight:600;background:rgba(255,253,247,.7);transition:.2s}
+.bar .back:hover{background:var(--ink);color:#f7f4ec}
+
+/* side trip nav (desktop) */
+.dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:14px}
+.dots a{display:flex;align-items:center;gap:9px;justify-content:flex-end;color:var(--ink-2);font-size:12px;font-weight:600;opacity:.55;transition:.25s}
+.dots a .bd{width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:var(--ink);opacity:.35;transition:.25s}
+.dots a span{opacity:0;transform:translateX(6px);transition:.25s;letter-spacing:.02em}
+.dots a:hover,.dots a.on{opacity:1}
+.dots a:hover .bd,.dots a.on .bd{background:var(--sun-2);opacity:1;transform:rotate(45deg) scale(1.2)}
+.dots a:hover span,.dots a.on span{opacity:1;transform:none}
+
+/* stacking sections */
+.stack{position:relative}
+.diary{position:sticky;top:0;min-height:100vh;display:grid;place-items:center;padding:84px 24px 48px;overflow:hidden}
+.diary .sheet{position:relative;width:min(1060px,100%);background:var(--card);border-radius:6px;
+  box-shadow:0 30px 60px -30px rgba(21,20,15,.55),0 2px 0 rgba(21,20,15,.05);
+  padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,3.4vw,48px);align-items:center;
+  border:1px solid rgba(255,255,255,.6)}
+.diary .sheet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:repeating-linear-gradient(var(--sun-2) 0 8px,transparent 8px 18px);opacity:.5;margin-left:-2px}
+.tape{position:absolute;width:120px;height:30px;background:rgba(245,197,24,.34);border:1px solid rgba(229,172,4,.28);box-shadow:0 1px 3px rgba(21,20,15,.08);z-index:5}
+
+/* reveal */
+.diary .sheet{opacity:0;transform:translateY(40px) scale(.985);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.diary.in .sheet{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.diary .sheet{opacity:1;transform:none;transition:none}}
+
+/* left column */
+.meta{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.meta .no{font-family:'Caveat',cursive;font-weight:700;font-size:24px;color:var(--sun-ink)}
+.meta .date{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.diary h2{font-size:clamp(38px,6vw,72px)}
+.reflect{margin-top:16px;font-size:clamp(14.5px,1.4vw,16px);color:var(--ink-2);max-width:52ch}
+.hi{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.hi .row{display:flex;gap:11px;align-items:flex-start}
+.hi .row .b{margin-top:6px;width:9px;height:9px;flex:none;transform:rotate(45deg);border-radius:2px;background:linear-gradient(135deg,var(--sun) 50%,var(--sun-2) 50%)}
+.hi .row h3{font-size:15.5px;line-height:1.2}
+.hi .row h3 em{font-style:normal;color:var(--sun-ink);font-size:12.5px;font-weight:600;margin-left:6px}
+.hi .row p{font-size:13px;color:var(--ink-3);margin-top:2px}
+
+/* right column — photo collage */
+.collage{position:relative;min-height:340px}
+.pola{position:absolute;background:#fffdf7;padding:9px 9px 0;border-radius:2px;border:1px solid var(--line);box-shadow:0 16px 30px -18px rgba(21,20,15,.6)}
+.pola .ph{width:100%;aspect-ratio:4/5;overflow:hidden;background:#e7dfcc;border-radius:1px}
+.pola .ph img{width:100%;height:100%;object-fit:cover}
+.pola .cap{font-family:'Caveat',cursive;font-weight:700;font-size:17px;text-align:center;padding:6px 4px 8px;color:var(--ink-2)}
+.pola.p1{width:52%;left:0;top:6%;transform:rotate(-5deg);z-index:2}
+.pola.p2{width:50%;right:2%;top:0;transform:rotate(4deg);z-index:1}
+.pola.p3{width:46%;left:22%;bottom:0;transform:rotate(-1.5deg);z-index:3}
+
+/* per-trip patterns / prints */
+.t1{background:#e7ede0}
+.t1{background-image:radial-gradient(rgba(107,132,97,.28) 1.6px,transparent 1.7px);background-size:20px 20px}
+.t2{background:#dfeaea;background-image:repeating-linear-gradient(45deg,rgba(90,130,140,.16) 0 12px,transparent 12px 26px)}
+.t3{background:#efe7d4;background-image:linear-gradient(rgba(180,140,40,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(180,140,40,.16) 1px,transparent 1px);background-size:26px 26px}
+.t4{background:#e2e8ee;background-image:radial-gradient(rgba(90,120,150,.22) 1.6px,transparent 1.7px);background-size:22px 22px;background-position:0 0,11px 11px}
+.t5{background:#f1e2df;background-image:repeating-linear-gradient(135deg,rgba(190,110,90,.16) 0 10px,transparent 10px 22px)}
+.t6{background:#dfe8df;background-image:repeating-linear-gradient(0deg,rgba(60,110,70,.14) 0 2px,transparent 2px 16px)}
+
+/* cover */
+.cover{position:sticky;top:0;min-height:100vh;display:grid;place-items:center;padding:80px 24px;overflow:hidden;
+  background:#efe9db;background-image:radial-gradient(rgba(138,85,0,.16) 1.4px,transparent 1.5px);background-size:24px 24px}
+.cover .in{text-align:center;position:relative}
+.cover .kick{font-family:'Caveat',cursive;font-weight:700;font-size:26px;color:var(--sun-ink);transform:rotate(-3deg)}
+.cover h1{font-size:clamp(52px,12vw,140px);margin:6px 0 4px}
+.cover .sub{font-size:clamp(15px,1.7vw,18px);color:var(--ink-2);max-width:46ch;margin:14px auto 0}
+.cover .sun{position:absolute;top:-8%;right:-6%;width:min(26vw,150px);aspect-ratio:1;border-radius:50%;background:var(--sun);z-index:-1}
+.cover .scroll{margin-top:34px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);display:inline-flex;align-items:center;gap:10px}
+.cover .scroll::after{content:"";width:1px;height:26px;background:var(--ink-3);animation:sc 1.8s ease-in-out infinite}
+@keyframes sc{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+
+/* closing */
+.end{position:relative;z-index:2;background:var(--ink);color:#e9e2d2;text-align:center;padding:90px 24px}
+.end h2{color:#fff;font-size:clamp(30px,5vw,52px)}
+.end h2 .i{font-style:italic;color:var(--sun)}
+.end p{max-width:44ch;margin:14px auto 0;color:#c9c2b2}
+.end a.btn{display:inline-block;margin-top:26px;background:var(--sun);color:var(--ink);border-radius:100px;padding:14px 30px;font-weight:700;transition:.2s}
+.end a.btn:hover{background:#fff;transform:translateY(-3px)}
+.end .foot{margin-top:40px;font-size:12.5px;color:#8a8371}
+
+@media(max-width:860px){
+  .dots{display:none}
+  .diary .sheet{grid-template-columns:1fr;gap:26px}
+  .collage{min-height:300px;margin-top:6px}
+}
+@media(max-width:600px){
+  .diary,.cover{position:relative;min-height:auto;padding:70px 16px 32px}
+  .diary .sheet{opacity:1;transform:none}
+  .collage{min-height:270px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a href="index.html" class="logo"><span class="d"></span>Saloni</a>
+  <a href="index.html#beyond" class="back">← Back to the site</a>
+</div>
+
+<nav class="dots" id="dots">
+  <a href="#macleodganj"><span>Macleodganj</span><i class="bd"></i></a>
+  <a href="#kasol"><span>Kasol</span><i class="bd"></i></a>
+  <a href="#jibhi"><span>Jibhi</span><i class="bd"></i></a>
+  <a href="#chopta"><span>Chopta</span><i class="bd"></i></a>
+  <a href="#jaipur"><span>Jaipur</span><i class="bd"></i></a>
+  <a href="#kerala"><span>Kerala</span><i class="bd"></i></a>
+</nav>
+
+<div class="stack">
+
+  <!-- COVER -->
+  <section class="cover" id="top">
+    <div class="in">
+      <div class="sun"></div>
+      <div class="kick">field notes from the road ✎</div>
+      <h1>Travel Diaries</h1>
+      <p class="sub">Six trips, mostly uphill — trekking and wandering across the Himalayas and down south. Scroll: each page stacks over the last, like flipping through the notebook.</p>
+      <div class="scroll">Scroll to begin</div>
+    </div>
+  </section>
+
+  <!-- 1 MACLEODGANJ -->
+  <section class="diary t1" id="macleodganj">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;left:12%;transform:rotate(-4deg)"></span>
+      <div>
+        <div class="meta"><span class="no">01</span><span class="date">Macleodganj · July 2024</span></div>
+        <h2>Macleodganj</h2>
+        <p class="reflect">Camping in the mountains will always be my favourite kind of trip, and Triund is a good spot for it. The trek was easy — grasslands and rock, plenty of viewpoints, and majestic mountains sitting in the clouds in the distance. Dharamkot's market needs a full day; it has a whole vibe of its own. We had less time for Dharamshala, but its market and monastery are a different cultural experience.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Triund Trek <em>2850 m</em></h3><p>An easy trail where you can find your own path.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Dharamkot Market</h3><p>Never seen such a beautiful market.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Bhagsu Waterfall</h3><p>A 30-foot stream falling straight down.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Dharamshala</h3><p>Monastery, stadium and tea gardens.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c5781125613cf3ee54_IMG_20240330_142245.jpg" alt="Triund trail"></div><div class="cap">on the trail</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6316a5fd112eba743_IMG_20240330_110535.jpg" alt="Mountain view"></div><div class="cap">clouds &amp; peaks</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c7bd9e8bfee8d1afa7_IMG_20240331_142457.jpg" alt="Camp"></div><div class="cap">camp night</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 KASOL -->
+  <section class="diary t2" id="kasol">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;right:14%;transform:rotate(3deg)"></span>
+      <div>
+        <div class="meta"><span class="no">02</span><span class="date">Kasol · July 2022</span></div>
+        <h2>Kasol</h2>
+        <p class="reflect">Parvati Valley is the kind of place that slows you right down — riverside cafes, pine air, and the hot springs at Manikaran. The Kheerganga trek rewards you with a hot spring at the very top; go slow and let the valley set the pace.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Kheerganga Trek <em>2850 m</em></h3><p>An easy climb to a hot spring at the top.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Parvati Valley Walk</h3><p>River on one side, pine on the other.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Shri Manikaran Sahib</h3><p>Gurudwara built around natural hot springs.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c75cce69f321cc6f4e_IMG_20240331_145125.jpg" alt="Kasol"></div><div class="cap">parvati side</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c60c914369f93ce61b_IMG_20240331_172745.jpg" alt="River"></div><div class="cap">river days</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c69dacafa6037c338b_IMG_20240331_132828.jpg" alt="Trail"></div><div class="cap">uphill</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 JIBHI -->
+  <section class="diary t3" id="jibhi">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;left:16%;transform:rotate(-3deg)"></span>
+      <div>
+        <div class="meta"><span class="no">03</span><span class="date">Jibhi · March 2024</span></div>
+        <h2>Jibhi</h2>
+        <p class="reflect">I went in late March, so it was cold — but only at night, perfect to explore by day and sit around a bonfire in the evening. Day two rained hard, so we mostly cafe-hopped, but we got the feeling of being above the clouds; the Serolsar trek was under fresh snow. Two nights covers the main spots — stretch to four to do all the treks without rushing.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Choie Waterfall</h3><p>A small trek with a river and mountains on one side.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Kuhli Katandi <em>Mini Thailand</em></h3><p>Calm and scenic, tall pines in near distance.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Jibhi Waterfall</h3><p>In the main town, still wrapped in greenery.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Cafe hopping</h3><p>Cafes made to work and vibe in.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6654ea938e73d01db_IMG_20240330_162939.jpg" alt="Jibhi forest"></div><div class="cap">pine &amp; fog</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c5781125613cf3ee54_IMG_20240330_142245.jpg" alt="Trail"></div><div class="cap">above the clouds</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6316a5fd112eba743_IMG_20240330_110535.jpg" alt="View"></div><div class="cap">rainy day</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 CHOPTA -->
+  <section class="diary t4" id="chopta">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;right:16%;transform:rotate(4deg)"></span>
+      <div>
+        <div class="meta"><span class="no">04</span><span class="date">Chopta · May 2024</span></div>
+        <h2>Chopta</h2>
+        <p class="reflect">We stayed near the start of the Tungnath trek, so mornings were easy — just start walking. The path is well paved, with straight shortcuts to jump. It's easy to reach Chandrashila and back the same day, though some stay at Tungnath for the sunrise. Deoriatal is pleasant too — forest, cliff-edge viewpoints, and a calm emerald lake. Uttarakhand is called Dev Bhumi, and it truly felt like a divine memory.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Tungnath Trek <em>3680 m</em></h3><p>Highest Shiva temple in the world, on to Chandrashila.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Deoriatal Lake <em>2438 m</em></h3><p>Emerald lake amid dense rhododendron forest.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Dhari Devi Temple</h3><p>On the bank of the Alaknanda river.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c7bd9e8bfee8d1afa7_IMG_20240331_142457.jpg" alt="Tungnath trail"></div><div class="cap">to the temple</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c75cce69f321cc6f4e_IMG_20240331_145125.jpg" alt="Peak"></div><div class="cap">moon peak</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c60c914369f93ce61b_IMG_20240331_172745.jpg" alt="Lake"></div><div class="cap">emerald water</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 JAIPUR -->
+  <section class="diary t5" id="jaipur">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;left:14%;transform:rotate(-4deg)"></span>
+      <div>
+        <div class="meta"><span class="no">05</span><span class="date">Jaipur · January 2024</span></div>
+        <h2>Jaipur</h2>
+        <p class="reflect">We had 2.5 days — enough to see everything and still shop at the end. The markets are beautiful for clothes, bags, spices, everything, and mostly within 5–10 km, so easy to start the day. Winter is the best time; the city opens late and closes early. Timing is everything with the temples — they close early and sometimes have lines.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Palaces</h3><p>City Palace, Hawa Mahal, Amber &amp; Jal Mahal.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Chokhi Dhani</h3><p>Rajasthan on a plate, and a whole cultural set.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Museums</h3><p>Albert Hall, the Wax Museum, gem &amp; jewel.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Forts &amp; gates</h3><p>Nahargarh, Jaigarh, Patrika Gate.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c69dacafa6037c338b_IMG_20240331_132828.jpg" alt="Jaipur"></div><div class="cap">pink city</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6654ea938e73d01db_IMG_20240330_162939.jpg" alt="Architecture"></div><div class="cap">old walls</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c5781125613cf3ee54_IMG_20240330_142245.jpg" alt="Market"></div><div class="cap">market run</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 KERALA -->
+  <section class="diary t6" id="kerala">
+    <div class="sheet">
+      <span class="tape" style="top:-14px;right:14%;transform:rotate(3deg)"></span>
+      <div>
+        <div class="meta"><span class="no">06</span><span class="date">Kerala · March 2022</span></div>
+        <h2>Kerala</h2>
+        <p class="reflect">Munnar is all tea gardens and postcard sunsets, with Kochi's spice markets and backwaters to round it out. The boat ride at Mattupetty — hills mirrored in still water — is the calm I remember most.</p>
+        <div class="hi">
+          <div class="row"><span class="b"></span><div><h3>Munnar Top Station</h3><p>Stepping into a postcard — best at sunset.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Mattupetty Dam</h3><p>A serene boat ride among emerald hills.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Kochi</h3><p>City beaches, boating, museums, spice market.</p></div></div>
+          <div class="row"><span class="b"></span><div><h3>Lakkom Waterfalls</h3><p>Cascading water, a mesmerising sight.</p></div></div>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="pola p1"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c6316a5fd112eba743_IMG_20240330_110535.jpg" alt="Munnar"></div><div class="cap">tea country</div></div>
+        <div class="pola p2"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c7bd9e8bfee8d1afa7_IMG_20240331_142457.jpg" alt="Hills"></div><div class="cap">green hills</div></div>
+        <div class="pola p3"><div class="ph"><img loading="lazy" src="https://cdn.prod.website-files.com/6554d3c8e85ca3e4e9807979/66b282c75cce69f321cc6f4e_IMG_20240331_145125.jpg" alt="Backwaters"></div><div class="cap">still water</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END -->
+  <section class="end">
+    <h2>More trails <span class="i">to come.</span></h2>
+    <p>The notebook's still filling up. Until the next one — say hello, or wander back to the rest of the site.</p>
+    <a class="btn" href="index.html">← Back to saloni's site</a>
+    <div class="foot">Travel Diaries · Saloni Kansal · somewhere between control and chaos</div>
+  </section>
+
+</div>
+
+<script>
+/* reveal each diary sheet + active side-dot */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.25});
+document.querySelectorAll('.diary').forEach(d=>io.observe(d));
+
+const dotmap={};document.querySelectorAll('.dots a').forEach(a=>dotmap[a.getAttribute('href').slice(1)]=a);
+const io2=new IntersectionObserver(es=>es.forEach(e=>{
+  const a=dotmap[e.target.id];if(!a)return;
+  if(e.isIntersecting){Object.values(dotmap).forEach(x=>x.classList.remove('on'));a.classList.add('on');}
+},{threshold:.5});
+document.querySelectorAll('.diary').forEach(d=>io2.observe(d));
+</script>
+</body>
+</html>
