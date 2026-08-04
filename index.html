@@ -249,6 +249,7 @@ nav.links a:hover{color:var(--ink)}nav.links a:hover::after{width:100%}
 .wcard .more{margin-top:13px;font-size:12.5px;color:var(--sun-ink);font-weight:600}
 .also{margin-top:28px;font-size:14.5px;color:var(--ink-3);max-width:60ch}
 .also b{color:var(--ink-2)}
+.also a{color:var(--sun-ink);font-weight:600;border-bottom:2px solid var(--sun);white-space:nowrap}
 
 /* STATEMENT band — folded paper sun */
 .statement{background:var(--ink);position:relative;overflow:hidden;text-align:center;padding:clamp(90px,14vw,170px) 0}
@@ -400,8 +401,8 @@ footer .h{color:var(--sun)}
       <div>
         <div class="place reveal"><span class="dot"></span> India · <span id="clock">—</span> local time</div>
         <h1 class="reveal">Hi, I'm<br>Saloni Kansal</h1>
-        <div class="thesis reveal">I find where systems <span class="mk">break</span> — then design what should replace them.</div>
-        <p class="intro reveal">Tech risk and audit is the day job; product and design is where I'm heading. A product manager in the making, learning exactly how enterprise systems fail — and designing the way out. Still living between control and chaos; here's everything that doesn't fit on a business card.</p>
+        <div class="thesis reveal">Living between <span class="mk">control</span> and <span class="mkc">chaos</span>.</div>
+        <p class="intro reveal">Tech risk today, product next — with design and the mountains in between. Here's everything that doesn't fit on a business card.</p>
         <div class="hero-cta reveal">
           <a href="#method" class="btn btn-solid">See how I work →</a>
           <a href="#connect" class="btn btn-ghost">Say hello</a>
@@ -523,17 +524,10 @@ footer .h{color:var(--sun)}
   <div class="wrap">
     <div class="kicker reveal"><span class="eyebrow">Things I've made</span>
       <h2 class="h-sec">Some work, and some ideas<br>I couldn't stop thinking about.</h2>
-      <p class="lead">Real engagements and independent concepts — client names anonymised. Tap any card for the gist.</p>
-    </div>
-    <div class="filters reveal" id="filters">
-      <button class="filter on" data-f="all">Everything</button>
-      <button class="filter" data-f="Risk">Risk &amp; consulting</button>
-      <button class="filter" data-f="Product">Product</button>
-      <button class="filter" data-f="Design">Design</button>
-      <button class="filter" data-f="Travel">Travel</button>
+      <p class="lead">The engagements I can talk about — client names anonymised. Tap any card for the gist.</p>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="also reveal"><b>Also floating around my notebooks:</b> a B2B travel-service directory, an all-in-one social content tool, and a balanced-meal planner. Ask me about any of them.</p>
+    <p class="also reveal">Alongside the day job there's a pile of product and design concepts — things I've sketched, prototyped, or just couldn't stop thinking about. <a href="ideas.html">See the concepts &amp; experiments →</a></p>
   </div>
 </section>
 
@@ -674,27 +668,6 @@ const CASES=[
  {id:'rpa',t:'RPA Controls Audit',s:'Professional',cls:'st-pro',f:['Risk'],tags:['RPA','104 controls'],
   lead:'A 104-control audit of a bot-automation (RPA) environment — an unfamiliar domain — delivered within a tight three-week window.',
   body:'<h4>The gist</h4><p>Ramping up quickly on a new area, testing against the full control set, and delivering a clean gap report on schedule.</p>'},
- {id:'turnover',t:'Turnover',s:'Concept',cls:'st-con',f:['Travel','Product'],tags:['Hospitality','Two-sided','Ops'],
-  lead:'An idea for short-stay hosts: a cleaner app and a host app, calendar sync with Airbnb / Vrbo / HomeAway, checklists, KPIs and cleaner bidding.',
-  body:'<h4>The gist</h4><p>The unglamorous problem behind every short-stay listing — getting a place cleaned and reset between guests reliably. Two connected apps, one for each side.</p>'},
- {id:'directory',t:'Travel Service Directory',s:'Concept',cls:'st-con',f:['Travel','Product'],tags:['Marketplace','Travel'],
-  lead:'An aggregator idea connecting travel companies with trip leaders — one place for organisers, packages, calendars and leads, so neither side has to go hunting.',
-  body:'<h4>The gist</h4><p>Travel companies struggle to find good trip leaders; trip leaders struggle to be found. The idea is a single directory that sits between them.</p>'},
- {id:'scan',t:'Scan &amp; Go',s:'Concept',cls:'st-con',f:['Product','Design'],tags:['Payments','Scanner'],
-  lead:'A token-scan-redeem concept explored in two settings — event ticketing and hostel-mess food. Host flow, approvals, payments, and a scanner built for the awkward cases.',
-  body:'<h4>The gist</h4><p>Create-event and host flows, approval and payment, and a scanner that handles the messy realities — already-used tokens, invalid codes, and a colour-ticket fallback when a QR won’t scan.</p>'},
- {id:'glow',t:'Glow',s:'Concept',cls:'st-con',f:['Product','Design'],tags:['Personas','Pomodoro','UX'],
-  lead:'A focus &amp; day-manager app — built around real personas, pomodoro breaks, gentle gamification, and a calendar that plans around your energy, not just your hours.',
-  body:'<h4>The gist</h4><p>Personas from students to stay-at-home parents, sub-tasks, and timers that count up from zero — a small choice meant to lower the dread of starting.</p>'},
- {id:'figma',t:'Figma Automation Plugin',s:'Built',cls:'st-built',f:['Design'],tags:['Figma','Plugin'],
-  lead:'A small Figma plugin that batch-edits frame properties — the repetitive part of design work, handed to a script.',
-  body:'<h4>The gist</h4><p>Reads a design, duplicates frames, and swaps properties across the copies programmatically, so the tedious edits happen on their own.</p>'},
- {id:'ouro',t:'Ouro No-Mad',s:'Idea',cls:'st-ven',f:['Travel'],tags:['Brand','F&B','The wild one'],
-  lead:'“Feed the journey” — a mountains-and-camping food brand idea, from a character-led identity down to vending machines out on the trail.',
-  body:'<h4>The gist</h4><p>The wilder one: dine-in experiences, character-led merch, and take-away trail food — a brand idea that came straight from being in the mountains.</p>'},
- {id:'watchtower',t:'Watchtower',s:'Idea',cls:'st-con',f:['Risk','Product'],tags:['Compliance','What I’d build'],
-  lead:'A concept — the product version of compliance-mapping done by hand: something that watches a control environment and flags what actually needs a person.',
-  body:'<h4>The gist</h4><p>Drawn from running compliance reviews manually: a tool that handles the repetitive checking and surfaces the parts that genuinely need judgement.</p>'},
 ];
 
 const grid=document.getElementById('grid');
@@ -712,12 +685,6 @@ observeReveals();
 /* paint above-the-fold immediately, and fail-safe so nothing ever stays hidden */
 requestAnimationFrame(()=>document.querySelectorAll('.hero .reveal').forEach(el=>el.classList.add('in')));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),1400);
-
-function applyFilter(f){
-  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
-  document.querySelectorAll('.wcard').forEach(c=>{const show=(f==='all')||c.dataset.cats.split(' ').includes(f);c.style.display=show?'flex':'none';});
-}
-document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.filter');if(b)applyFilter(b.dataset.f);});
 
 const drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
 function openDrawer(id){const c=CASES.find(x=>x.id===id);if(!c)return;
